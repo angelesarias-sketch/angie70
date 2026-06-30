@@ -1,0 +1,132 @@
+:root{
+  /* Paleta: tonalidades de azules, gris y blanco (institución) */
+  --bg: #f4f7fb;
+  --card: #ffffff;
+  --primary-dark: #0b4fa3;
+  --primary: #1370d8;
+  --primary-light: #5ba6ff;
+  --muted: #6b7280;
+  --text: #1f2937;
+  --radius: 10px;
+  --gap: 1rem;
+  font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+}
+
+*{box-sizing:border-box}
+body{
+  margin:0;
+  background:var(--bg);
+  color:var(--text);
+  line-height:1.4;
+  -webkit-font-smoothing:antialiased;
+}
+
+.container{
+  max-width:980px;
+  margin:0 auto;
+  padding:1rem;
+}
+
+.skip-link{
+  position:absolute;
+  left:-9999px;
+  top:auto;
+  width:1px;height:1px;
+  overflow:hidden;
+}
+.skip-link:focus{
+  left:1rem;
+  top:1rem;
+  width:auto;height:auto;
+  background:var(--primary-dark);
+  color:#fff;padding:.5rem .75rem;border-radius:4px;text-decoration:none;
+}
+
+/* Header */
+.site-header{
+  background: linear-gradient(90deg, var(--primary-dark), var(--primary));
+  color:#fff;
+  padding:1rem 0 0 0;
+  margin-bottom:var(--gap);
+  box-shadow: 0 4px 18px rgba(15,30,60,0.08);
+}
+.header-row{
+  display:flex;
+  align-items:center;
+  justify-content:space-between;
+  gap:1rem;
+}
+.brand{display:flex;align-items:center;gap:.75rem}
+.brand-logo{width:64px;height:64px;border-radius:6px;object-fit:contain;background:transparent;padding:.25rem}
+.course-title{margin:.1rem 0 0 0;font-size:1.25rem}
+.instructor{margin:.15rem 0 0 0;color:rgba(255,255,255,.95);font-size:.95rem}
+
+/* Header actions */
+.header-actions{display:flex;align-items:center;gap:.5rem}
+.btn-primary{
+  display:inline-block;
+  background: #fff;
+  color: var(--primary-dark);
+  padding:.5rem .9rem;
+  border-radius:8px;
+  text-decoration:none;
+  font-weight:700;
+  box-shadow: 0 6px 18px rgba(19,112,216,0.12);
+  border: 2px solid rgba(255,255,255,0.15);
+}
+.btn-primary:focus, .btn-primary:hover{
+  transform:translateY(-1px);
+  box-shadow: 0 10px 28px rgba(19,112,216,0.16);
+  outline: 3px solid rgba(91,166,255,0.15);
+}
+
+/* Navigation */
+.main-nav{
+  padding:.5rem 0 1rem 0;
+}
+.main-nav ul{
+  list-style:none;
+  padding:0;
+  margin:0;
+  display:flex;
+  gap:.5rem;
+  flex-wrap:wrap;
+}
+.main-nav a{
+  color:#fff;
+  text-decoration:none;
+  background:rgba(255,255,255,.08);
+  padding:.35rem .6rem;
+  border-radius:6px;
+  font-weight:600;
+}
+.main-nav a:focus, .main-nav a:hover{
+  background:rgba(255,255,255,.18);
+  outline:2px solid rgba(255,255,255,.08);
+}
+
+/* Cards */
+.card{
+  background:var(--card);
+  border-radius:var(--radius);
+  padding:1rem;
+  margin-bottom:var(--gap);
+  box-shadow:0 6px 18px rgba(20,30,60,0.06);
+}
+.card h2{margin-top:0;color:var(--primary-dark)}
+.card a{color:var(--primary);text-decoration:underline}
+
+/* Footer */
+.site-footer{
+  padding:1rem 0;
+  text-align:center;
+  color:var(--muted);
+  font-size:.9rem;
+}
+
+/* Responsive */
+@media (min-width:720px){
+  .course-title{font-size:1.5rem}
+  main{display:grid;grid-template-columns:repeat(2,1fr);gap:1rem}
+  #silabo,#cronograma,#recursos,#tareas,#contacto{min-height:120px}
+}
